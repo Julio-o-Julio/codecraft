@@ -1,4 +1,4 @@
-# codecraft-user-service
+# CodeCraft
 
 Este repositório contém o blog **CodeCraft**, um sistema baseado em monolito modular e DDD para compartilhar conteúdos sobre Engenharia de Software e Tecnologia em geral.
 
@@ -18,7 +18,6 @@ Frontend | /Julio-o-Julio/blogb
 
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Nest](https://github.com/nestjs/nest)
-- [Fastify](https://github.com/fastify/fastify)
 - [Prisma](https://github.com/prisma/prisma)
 
 ## Clonando o projeto
