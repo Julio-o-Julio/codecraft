@@ -14,14 +14,16 @@ async function bootstrap() {
     new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }),
   );
 
-  // Configurando a documentação
-  const configDocs = new DocumentBuilder()
-    .setTitle('Typed API')
-    .setDescription('Documentação da API')
-    .setVersion('1.0.0')
-    .build();
-  const document = SwaggerModule.createDocument(app, configDocs);
-  SwaggerModule.setup('api/v1/docs', app, document);
+  // Documentação só fora de produção: em produção ela entrega o mapa da API.
+  if (process.env.NODE_ENV !== 'production') {
+    const configDocs = new DocumentBuilder()
+      .setTitle('Typed API')
+      .setDescription('Documentação da API')
+      .setVersion('1.0.0')
+      .build();
+    const document = SwaggerModule.createDocument(app, configDocs);
+    SwaggerModule.setup('api/v1/docs', app, document);
+  }
 
   await app.listen(process.env.API_V1_PORT ?? 3000, '0.0.0.0');
 }
